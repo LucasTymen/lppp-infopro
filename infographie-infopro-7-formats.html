@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infopro Digital — 7 formats infographiques (perf + business)</title>
+  <link rel="stylesheet" href="infopro_style_tokens.css">
+  <style>
+    :root {
+      --bg: #f7f6f5;
+      --card: #ffffff;
+      --text: #001327;
+      --muted: #9ab6c3;
+      --red: #ff4d4f;
+      --orange: #ff9f0a;
+      --green: #00e676;
+      --blue: #3999e5;
+      --line: #d4e1e6;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0; color: var(--text); font-family: "Roboto", system-ui, Arial, sans-serif; font-size: 1.2rem; line-height: 1.6; }
+    h1 { font-family: "Roboto Condensed", "Roboto", system-ui; font-size: 1.7rem; margin-bottom: 8px; }
+    .subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 24px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-bottom: 20px; max-width: 980px; margin-left: auto; margin-right: auto; }
+    .card h2 { font-size: 1.35rem; margin: 0 0 8px 0; }
+    .muted { color: var(--muted); font-size: 1.05rem; margin-top: 6px; }
+    .timeline-wrap { position: relative; }
+    .journey-timeline { width: 100%; max-width: 760px; height: auto; }
+    .journey-labels { position: relative; height: 36px; margin-top: 4px; display: flex; }
+    .journey-label { position: absolute; transform: translateX(-50%); font-size: 13px; color: var(--muted); white-space: nowrap; }
+    .meter-value { font-size: 2rem; font-weight: 800; color: var(--red); transition: transform 0.15s ease; }
+    .meter-value.tick { transform: scale(1.05); }
+    .ring-progress { transition: stroke-dasharray 0.8s ease-out; }
+    .speedo-wrap { display: flex; justify-content: center; margin: 1rem 0; }
+    .ring-wrap { display: flex; flex-direction: column; align-items: center; }
+    @media (prefers-reduced-motion: reduce) { .tick, .ring-progress { animation: none !important; } }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; background: color-mix(in srgb, var(--bg) 96%, rgba(255,255,255,0.95)); backdrop-filter: blur(12px); border-bottom: 2px solid var(--line); }
+    .nav-logo { max-height: 36px; width: auto; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; }
+    .nav-links a { font-size: 1.05rem; font-weight: 500; color: var(--muted); text-decoration: none; }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue); }
+    .nav-links a.active { font-weight: 600; }
+    .nav-cta { padding: 0.5rem 1rem; background: var(--blue); color: #fff; font-weight: 600; font-size: 1.05rem; border-radius: 8px; text-decoration: none; }
+    header { max-width: 980px; margin: 0 auto; padding: 0 20px 24px; }
+    body { padding-top: 60px; }
+  </style>
+</head>
+<body>
+  <div class="site-bg-fixed">
+    <div class="site-bg-video">
+      <iframe src="https://www.youtube-nocookie.com/embed/ArifpieowSw?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=ArifpieowSw&amp;controls=0&amp;rel=0&amp;showinfo=0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Fond" aria-hidden="true"></iframe>
+    </div>
+    <div class="site-bg-overlay"></div>
+  </div>
+  <div class="site-content">
+  <nav class="nav">
+    <a href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Promovacances.svg" alt="Infopro Digital" class="nav-logo" loading="lazy"></a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="rapport.html">Rapport</a>
+      <a href="infographie-infopro-7-formats.html" class="active">Infographie</a>
+      <a href="positionnement-marketing.html">Positionnement marketing</a>
+      <a href="index.html#coordonnees" class="nav-cta">Me contacter</a>
+    </div>
+  </nav>
+  <div class="site-content-inner">
+  <header>
+    <h1>Infopro Digital — Diagnostic perf & manque à gagner</h1>
+    <p class="subtitle">7 formats visuels (score, timeline, compteur perte, bullet chart, heatmap, waterfall, recovery). Données à recalibrer avec mesures terrain.</p>
+  </header>
+
+  <section class="card" id="speedometer">
+    <h2>1. Score global (tachymètre)</h2>
+    <p class="muted">Une seule note 0–100. Marge de progression sur LCP et front.</p>
+    <div class="speedo-wrap">
+      <svg class="speedo" viewBox="0 0 120 70" width="200" height="120" aria-label="Score performance global">
+        <defs>
+          <linearGradient id="speedoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="var(--red)"/>
+            <stop offset="50%" stop-color="var(--orange)"/>
+            <stop offset="100%" stop-color="var(--green)"/>
+          </linearGradient>
+        </defs>
+        <path d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="10" stroke-linecap="round"/>
+        <path id="speedoFill" d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="url(#speedoGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="0 157"/>
+        <line x1="60" y1="60" x2="60" y2="35" stroke="var(--text)" stroke-width="2" stroke-linecap="round" id="needle"/>
+        <text x="60" y="48" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700" id="scoreText">52</text>
+        <text x="60" y="66" text-anchor="middle" font-size="10" fill="var(--muted)">/ 100</text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="card" id="journey">
+    <h2>2. Ce que vit l'utilisateur (timeline 0 → 8 s)</h2>
+    <p class="muted">TTFB bon ; le retard vient du front : FCP, LCP, TTI.</p>
+    <div class="timeline-wrap">
+      <svg class="journey-timeline" viewBox="0 0 800 80" preserveAspectRatio="xMidYMid meet">
+        <line x1="20" y1="40" x2="780" y2="40" stroke="var(--line)" stroke-width="2"/>
+        <g id="journeyMarkers"></g>
+      </svg>
+      <div class="journey-labels" id="journeyLabels"></div>
+    </div>
+  </section>
+
+  <section class="card" id="lostRevenue">
+    <h2>3. Compteur perte (Lost Revenue Meter)</h2>
+    <p class="muted">À recalibrer avec vos données (trafic, CVR, panier).</p>
+    <div class="meter-wrap">
+      <div class="meter-value" id="lostRevenueValue">+0,00 €</div>
+      <div class="muted" id="lostRevenueSub">depuis l'ouverture de cette page</div>
+    </div>
+  </section>
+
+  <section class="card" id="bulletChart">
+    <h2>4. Bullet Chart</h2>
+    <p class="muted">TTFB OK ; LCP et perte conversion à optimiser.</p>
+    <div class="bullet-wrap" id="bulletWrap"></div>
+  </section>
+
+  <section class="card" id="heatmap">
+    <h2>5. Impact × Effort</h2>
+    <p class="muted">Priorité : images & LCP. Serveur marginal.</p>
+    <div class="heatmap-wrap">
+      <div class="heatmap-grid">
+        <div class="heat-cell empty"></div>
+        <div class="heat-cell axis">Effort faible</div>
+        <div class="heat-cell axis">Effort élevé</div>
+        <div class="heat-cell axis">Impact faible</div>
+        <div class="heat-cell q low-effort"><span class="action">—</span></div>
+        <div class="heat-cell q high-effort"><span class="action">Refonte front</span></div>
+        <div class="heat-cell axis">Impact élevé</div>
+        <div class="heat-cell q low-effort"><span class="action">JS defer • Lazy load</span></div>
+        <div class="heat-cell q high-effort"><span class="action">Images & LCP (priorité)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="waterfall">
+    <h2>6. Cascade de chargement</h2>
+    <p class="muted">TTFB court ; le blocage vient des images et du JS.</p>
+    <div class="waterfall-wrap" id="waterfallWrap"></div>
+  </section>
+
+  <section class="card" id="recovery">
+    <h2>7. Potentiel de récupération</h2>
+    <p class="muted">Priorité front : Images & LCP (50 %), JS (35 %). Serveur marginal (15 %).</p>
+    <div class="ring-wrap">
+      <svg class="ring" viewBox="0 0 100 100" width="160" height="160">
+        <circle cx="50" cy="50" r="42" fill="none" stroke="var(--line)" stroke-width="8"/>
+        <circle id="ringRecovery" cx="50" cy="50" r="42" fill="none" stroke="var(--green)" stroke-width="8" stroke-linecap="round" stroke-dasharray="0 264" transform="rotate(-90 50 50)"/>
+        <text x="50" y="52" text-anchor="middle" font-size="20" font-weight="700" fill="var(--text)">85%</text>
+      </svg>
+    </div>
+  </section>
+
+  <footer class="muted" style="margin-top:24px;font-size:0.8rem;max-width:980px;margin-left:auto;margin-right:auto;">
+    Infopro Digital — 7 formats (modèle Promovacances LPPP). Données à recalibrer avec mesures terrain.
+  </footer>
+  </div>
+  </div>
+
+  <script>
+(function() {
+  var score = 52;
+  var dash = (score / 100) * 157;
+  document.getElementById('speedoFill').setAttribute('stroke-dasharray', dash + ' 157');
+  document.getElementById('scoreText').textContent = score;
+  document.getElementById('needle').setAttribute('transform', 'rotate(' + (180 * (1 - score/100)) + ' 60 60)');
+
+  var journeySteps = [{t:0,label:'Requête'},{t:100,label:'TTFB'},{t:5200,label:'LCP'},{t:8000,label:'TTI'}];
+  var jMax = 8000, jW = 760;
+  journeySteps.forEach(function(s,i){
+    var x = 20 + (s.t/jMax)*jW;
+    var line = document.createElementNS('http://www.w3.org/2000/svg','line');
+    line.setAttribute('x1',x); line.setAttribute('y1',40); line.setAttribute('x2',x); line.setAttribute('y2',56);
+    line.setAttribute('stroke',i===0?'var(--green)':(s.t>2000?'var(--red)':'var(--orange)')); line.setAttribute('stroke-width','2');
+    document.getElementById('journeyMarkers').appendChild(line);
+    var lb = document.createElement('div'); lb.className='journey-label'; lb.style.left=((s.t/jMax)*100)+'%'; lb.textContent=s.label;
+    document.getElementById('journeyLabels').appendChild(lb);
+  });
+
+  var lostPerSec = 28000/30/24/3600; var elapsed=0;
+  setInterval(function(){elapsed++;document.getElementById('lostRevenueValue').textContent='+'+((elapsed*lostPerSec).toFixed(2).replace('.',','))+' €';},1000);
+
+  var bullets=[{label:'TTFB',current:0.1,target:0.6,standard:1,max:5,unit:'s'},{label:'LCP',current:5.2,target:2.5,standard:4,max:10,unit:'s'}];
+  bullets.forEach(function(b){
+    var d=document.createElement('div'); d.className='bullet-row';
+    d.innerHTML='<span class="bullet-label">'+b.label+'</span><div class="bullet-track"><div class="bullet-bg" style="width:100%"></div><div class="bullet-target" style="width:'+(b.target/b.max*100)+'%"></div><div class="bullet-current" style="width:'+Math.min((b.current/b.max*100),100)+'%"></div></div><span class="bullet-legend">'+b.current+' '+b.unit+'</span>';
+    document.getElementById('bulletWrap').appendChild(d);
+  });
+  var st=document.createElement('style'); st.textContent='.bullet-row{display:grid;grid-template-columns:80px 1fr 100px;align-items:center;gap:10px;margin:10px 0;}.bullet-track{position:relative;height:24px;background:var(--line);border-radius:8px;overflow:hidden;}.bullet-bg{position:absolute;inset:0;background:rgba(0,230,118,0.15);}.bullet-target{position:absolute;left:0;top:0;bottom:0;background:var(--green);opacity:0.5;border-radius:8px;}.bullet-current{position:absolute;left:0;top:0;bottom:0;background:var(--red);border-radius:8px;}.bullet-label{font-weight:600;}.bullet-legend{font-size:12px;color:var(--muted);}';
+  document.head.appendChild(st);
+
+  var hst=document.createElement('style'); hst.textContent='.heatmap-grid{display:grid;grid-template-columns:100px 1fr 1fr;grid-template-rows:auto 1fr 1fr;gap:8px;max-width:420px;}.heat-cell{border:1px solid var(--line);border-radius:10px;padding:12px;min-height:56px;}.heat-cell.axis{color:var(--muted);font-size:12px;}.heat-cell.q{background:rgba(57,153,229,0.08);font-size:13px;}.heat-cell.q.low-effort{grid-column:2;}.heat-cell.q.high-effort{grid-column:3;}'; document.head.appendChild(hst);
+
+  [{name:'HTML',dur:0.1,color:'var(--green)'},{name:'Images',dur:2.2,color:'var(--blue)'},{name:'LCP',dur:1.8,color:'var(--orange)'}].forEach(function(s,i){var w=Math.max(44,s.dur*60);var d=document.createElement('div');d.style.cssText='height:32px;display:flex;align-items:center;padding-left:6px;border-radius:6px;background:'+s.color+';width:'+w+'px;min-width:44px;font-size:11px;margin-left:'+(i*2)+'px;';d.textContent=s.name+' '+s.dur+'s';document.getElementById('waterfallWrap').appendChild(d);});
+
+  var r=document.getElementById('ringRecovery'); var c=2*Math.PI*42; r.setAttribute('stroke-dasharray',(c*0.85)+' '+c);
+})();
+  </script>
+</body>
+</html>

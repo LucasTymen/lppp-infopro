@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Rapport — Infopro Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --pv-white: #ffffff;
+  --pv-ink: #001327;
+  --pv-ink-2: #121d29;
+  --pv-blue: #3999e5;
+  --pv-blue-2: #2078ae;
+  --pv-blue-3: #5ca6dc;
+  --pv-gray-100: #f7f6f5;
+  --pv-gray-200: #d4e1e6;
+  --pv-gray-300: #9ab6c3;
+  --pv-gray-400: #b0b9bc;
+  --lp-font-body: 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --lp-font-heading: 'Roboto Condensed', 'Roboto', system-ui, sans-serif;
+  --lp-bg: #FFFFFF;
+  --lp-text: #001327;
+  --lp-primary: #3999E5;
+  --lp-secondary: #2078AE;
+  --lp-border: #d4e1e6;
+  --lp-block-bg: #f7f6f5;
+  --lp-muted: #5c6b7a;
+  --lp-heading: #001327;
+  --lp-cta-text: #ffffff;
+  --lp-text-on-light: #001327;
+  --lp-text-on-dark: #f5f5f5;
+}
+
+/* Lisibilité — +0.2em base (1.2rem vs 1rem) */
+html { font-size: 18px; }
+body { font-size: 1.125rem; line-height: 1.6; }
+
+/* Nav fond clair — contraste texte sombre (comme promovacances.com) */
+body:has(.nav) .nav {
+  background: color-mix(in srgb, var(--lp-bg) 96%, rgba(255,255,255,0.95)) !important;
+  border-bottom-color: var(--pv-gray-200) !important;
+}
+body:has(.nav) .nav-links a,
+body:has(.nav) .nav span:first-child { color: var(--lp-text-on-light) !important; }
+body:has(.nav) .nav-links a:hover { color: var(--lp-primary) !important; }
+
+/* Hero vidéo : parallaxe (fixe au scroll) + overlay, sans contrôles ni son */
+.hero.has-bg-video {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  overflow: hidden !important;
+}
+.hero.has-bg-video .hero-bg-video {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-width: 100vw !important;
+  min-height: 100vh !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+.hero.has-bg-video .hero-bg-video iframe {
+  width: 100vw !important;
+  min-width: 100vw !important;
+  min-height: 100vh !important;
+  height: 56.25vw !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+</style>
+    <style>
+        :root { --lp-ease: cubic-bezier(0.4, 0, 0.2, 1); }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--lp-font-body, 'Roboto', system-ui, sans-serif); margin: 0; min-height: 100vh; background: var(--lp-bg, #0d0d0d); color: var(--lp-text, #e6e6e6); line-height: 1.6; font-size: 1.2rem; }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; background: color-mix(in srgb, var(--lp-bg, #0d0d0d) 94%, transparent); backdrop-filter: blur(12px); border-bottom: 2px solid color-mix(in srgb, var(--lp-primary, #4a9eff) 50%, transparent); }
+        .nav-logo { max-height: 36px; width: auto; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; }
+        .nav-links a { font-size: 1.05rem; font-weight: 500; color: var(--lp-muted, #999); text-decoration: none; transition: color 0.2s var(--lp-ease); }
+        .nav-links a:hover { color: var(--lp-primary, #4a9eff); }
+        .nav-links a.active { color: var(--lp-primary, #4a9eff); font-weight: 600; }
+        .nav-cta { display: inline-block; padding: 0.5rem 1rem; background: var(--lp-primary, #4a9eff); color: var(--lp-cta-text, #fff); font-weight: 600; font-size: 1.05rem; border-radius: 8px; text-decoration: none; }
+        .page-wrap { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; padding-top: calc(2rem + 52px); }
+        .report-body h1, .report-body h2, .report-body h3 { color: var(--lp-heading, #fff); margin-top: 1.5em; margin-bottom: 0.5em; }
+        .report-body h1 { font-size: 1.75rem; border-bottom: 2px solid var(--lp-primary, #4a9eff); padding-bottom: 0.25em; }
+        .report-body h2 { font-size: 1.35rem; }
+        .report-body h3 { font-size: 1.1rem; }
+        .report-body p { margin: 0 0 0.75rem; }
+        .report-body ul, .report-body ol { margin: 0 0 0.75rem 1.5rem; }
+        .report-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 1.05rem; }
+        .report-body th, .report-body td { border: 1px solid color-mix(in srgb, var(--lp-primary, #4a9eff) 40%, transparent); padding: 0.5rem 0.75rem; text-align: left; }
+        .report-body th { background: color-mix(in srgb, var(--lp-primary, #4a9eff) 15%, var(--lp-bg, #0d0d0d)); color: var(--lp-heading, #fff); }
+        .report-body blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 4px solid var(--lp-primary, #4a9eff); color: var(--lp-muted, #999); }
+        .report-intro { margin: 0 0 1.5rem; padding: 0.85rem 1rem; background: color-mix(in srgb, var(--lp-primary, #4a9eff) 12%, var(--lp-bg, #0d0d0d)); border-left: 4px solid var(--lp-primary, #4a9eff); font-size: 1.1rem; color: var(--lp-text, #e6e6e6); }
+        .site-bg-fixed { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; overflow: hidden; pointer-events: none; }
+        .site-bg-video { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100vw; min-width: 100vw; height: 56.25vw; min-height: 100vh; max-height: none; }
+        .site-bg-video iframe { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100vw; min-width: 100vw; height: 56.25vw; min-height: 100vh; object-fit: cover; }
+        .site-bg-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.7) 100%); }
+        .site-content { position: relative; z-index: 1; min-height: 100vh; }
+    </style>
+</head>
+<body>
+    
+    <div class="site-bg-fixed">
+        <div class="site-bg-video">
+            <iframe src="https://www.youtube-nocookie.com/embed/ArifpieowSw?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=ArifpieowSw&amp;controls=0&amp;rel=0&amp;showinfo=0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Fond" aria-hidden="true"></iframe>
+        </div>
+        <div class="site-bg-overlay"></div>
+    </div>
+    
+    <div class="site-content">
+    <nav class="nav">
+        
+        <a href="index.html" style="font-weight:700; color: var(--lp-text); text-decoration: none;">Infopro Digital</a>
+        
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="rapport.html" class="active">Rapport</a>
+            <a href="infographie-infopro-7-formats.html">Infographie</a>
+            <a href="positionnement-marketing.html">Positionnement marketing</a>
+            
+            <a href="index.html#coordonnees" class="nav-cta">Me contacter</a>
+        </div>
+    </nav>
+    <main class="page-wrap">
+        <p class="report-intro">Ce rapport synthétise <strong>ce qui s'applique à Infopro Digital</strong> — diagnostic, opportunités et plan d'action.</p>
+        <div class="report-body"><h1>Infopro Digital — PPP (lppp-infopro)</h1>
+<p>Landing <strong>rapport complet</strong> pour Infopro Digital (éditeur B2B, médias professionnels).</p>
+<p><strong>Projet</strong> : lppp-infopro (basé sur le modèle Promovacances).</p>
+<h2>Créer la landing en base</h2>
+<ol>
+<li><strong>Racine projet</strong> : se placer dans le répertoire LPPP.</li>
+<li><strong>Stack Docker</strong> : si les services ne tournent pas :</li>
+</ol>
+<p><code>bash
+   make landing-infopro-full</code></p>
+<p>Si le stack est déjà démarré :</p>
+<p><code>bash
+   make landing-infopro</code></p>
+<h2>Export statique (Vercel)</h2>
+<pre><code class="language-bash">python manage.py export_landing_static infopro --json docs/contacts/infopro/landing-proposition-infopro.json --output deploy/static-infopro-vercel/index.html --rapport-md docs/contacts/infopro/README.md
+</code></pre>
+<h2>Repo landing (LPPP_infopro)</h2>
+<table>
+<thead>
+<tr>
+<th>Plateforme</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GitHub</strong></td>
+<td><code>https://github.com/LucasTymen/LPPP_infopro</code></td>
+</tr>
+<tr>
+<td><strong>GitLab</strong></td>
+<td><code>https://gitlab.com/LucasTymen/lppp_infopro</code></td>
+</tr>
+<tr>
+<td><strong>Vercel</strong></td>
+<td>Projet <strong>lppp-infopro</strong> lié au repo GitHub.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Push</strong> : voir <code>deploy/PUSH-INFOPRO.md</code>.</p>
+<h2>Fichiers</h2>
+<table>
+<thead>
+<tr>
+<th>Fichier</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>landing-proposition-infopro.json</code></td>
+<td>Contenu de la page proposition.</td>
+</tr>
+<tr>
+<td><code>positionnement-marketing.html</code></td>
+<td>Page positionnement / étude paid media.</td>
+</tr>
+<tr>
+<td><code>infographie-infopro-7-formats.html</code></td>
+<td>Infographie 7 formats.</td>
+</tr>
+<tr>
+<td><code>audit-dashboard.json</code></td>
+<td>Données dashboard audit.</td>
+</tr>
+<tr>
+<td><code>infopro_style_tokens.css</code></td>
+<td>Palette et tokens CSS.</td>
+</tr>
+<tr>
+<td><code>README.md</code></td>
+<td>Ce fichier.</td>
+</tr>
+</tbody>
+</table></div>
+    </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* Infopro Digital — style kit (basé sur modèle Promovacances)
+   Palette : Roboto, bleu #3999e5, fond clair.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+:root{
+  --pv-white: #ffffff;
+  --pv-ink: #001327;
+  --pv-ink-2: #121d29;
+  --pv-blue: #3999e5;
+  --pv-blue-2: #2078ae;
+  --pv-blue-3: #5ca6dc;
+  --pv-gray-100: #f7f6f5;
+  --pv-gray-200: #d4e1e6;
+  --pv-gray-300: #9ab6c3;
+  --pv-gray-400: #b0b9bc;
+}
+
+html { font-size: 18px; }
+body{
+  font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 1.125rem;
+  color: var(--pv-ink);
+  background: var(--pv-white);
+  line-height: 1.6;
+}
+
+h1,h2,h3,.pv-heading{
+  font-family: "Roboto Condensed", "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+.pv-btn-primary{
+  background: var(--pv-blue);
+  color: var(--pv-white);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+.pv-link{ color: var(--pv-blue); }
+.pv-link:hover{ color: var(--pv-blue-2); }
+
+.site-bg-fixed {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.site-bg-video {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  min-width: 100vw;
+  height: 56.25vw;
+  min-height: 100vh;
+  max-height: none;
+}
+.site-bg-video iframe {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  min-width: 100vw;
+  height: 56.25vw;
+  min-height: 100vh;
+  max-height: none;
+  object-fit: cover;
+}
+.site-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.7) 100%);
+}
+.site-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+.site-content-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 80px;
+}

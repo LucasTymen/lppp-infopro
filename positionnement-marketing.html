@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positionnement marketing — Infopro Digital</title>
+  <link rel="stylesheet" href="infopro_style_tokens.css">
+  <style>
+    :root {
+      --bg: #f7f6f5;
+      --card: #ffffff;
+      --text: #001327;
+      --muted: #9ab6c3;
+      --blue: #3999e5;
+      --line: #d4e1e6;
+      --green: #00e676;
+      --orange: #ff9f0a;
+      --red: #ff4d4f;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0; color: var(--text); font-family: "Roboto", system-ui, Arial, sans-serif; font-size: 1.2rem; line-height: 1.6; }
+    h1 { font-family: "Roboto Condensed", "Roboto", system-ui; font-size: 1.7rem; margin-bottom: 8px; }
+    h2 { font-size: 1.35rem; margin: 1.5em 0 0.5em 0; color: var(--text); }
+    .subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 24px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto; }
+    .muted { color: var(--muted); font-size: 1.05rem; }
+    .nav { position: sticky; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; background: color-mix(in srgb, var(--bg) 96%, rgba(255,255,255,0.95)); backdrop-filter: blur(12px); border-bottom: 2px solid var(--line); }
+    .nav-logo { max-height: 36px; width: auto; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; }
+    .nav-links a { font-size: 1.05rem; font-weight: 500; color: var(--muted); text-decoration: none; }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue); }
+    .nav-links a.active { font-weight: 600; }
+    .nav-cta { padding: 0.5rem 1rem; background: var(--blue); color: #fff; font-weight: 600; font-size: 1.05rem; border-radius: 8px; text-decoration: none; }
+    header { max-width: 900px; margin: 0 auto; padding: 0 20px 24px; }
+    body { padding-top: 60px; }
+    .card ul { margin: 0.5em 0 0 1.25em; }
+    .card li { margin-bottom: 0.4em; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 1.05rem; }
+    th, td { border: 1px solid var(--line); padding: 0.5rem 0.75rem; text-align: left; }
+    th { background: color-mix(in srgb, var(--blue) 15%, white); font-weight: 600; }
+    .formula-block { background: color-mix(in srgb, var(--blue) 8%, white); border-left: 4px solid var(--blue); padding: 1rem 1.25rem; margin: 1rem 0; font-family: "Roboto Mono", "Consolas", monospace; font-size: 0.95rem; }
+    .formula-block .label { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.3em; font-family: "Roboto", system-ui; }
+    .flow-diagram { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin: 1rem 0; }
+    .flow-node { padding: 0.6rem 1rem; background: color-mix(in srgb, var(--blue) 15%, white); border-radius: 10px; font-weight: 600; font-size: 0.95rem; }
+    .flow-node.google { border-left: 4px solid var(--blue); }
+    .flow-node.meta { border-left: 4px solid var(--orange); }
+    .flow-arrow { font-size: 1.2rem; color: var(--muted); }
+    @media (prefers-reduced-motion: reduce) { .bar-fill { transition: none; } }
+  </style>
+</head>
+<body>
+  <div class="site-bg-fixed">
+    <div class="site-bg-video">
+      <iframe src="https://www.youtube-nocookie.com/embed/ArifpieowSw?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=ArifpieowSw&amp;controls=0&amp;rel=0&amp;showinfo=0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Fond" aria-hidden="true"></iframe>
+    </div>
+    <div class="site-bg-overlay"></div>
+  </div>
+  <div class="site-content">
+  <nav class="nav">
+    <a href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Promovacances.svg" alt="Infopro Digital" class="nav-logo" loading="lazy"></a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="rapport.html">Rapport</a>
+      <a href="infographie-infopro-7-formats.html">Infographie</a>
+      <a href="positionnement-marketing.html" class="active">Positionnement marketing</a>
+      <a href="index.html#coordonnees" class="nav-cta">Me contacter</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Positionnement marketing — Infopro Digital</h1>
+    <p class="subtitle">Résumé de la situation actuelle et de l’étude paid media (Google Ads, Meta). À compléter avec données publiques — centre de transparence Google, bibliothèque publicitaire Meta.</p>
+  </header>
+
+  <div class="site-content-inner">
+  <section class="card">
+    <h2>Situation</h2>
+    <p>Infopro Digital : groupe média B2B (Usine Nouvelle, Le Moniteur, etc.). Sites métiers, audiences professionnelles. Le diagnostic perf s'appuie sur le modèle Promovacances (LPPP).</p>
+    <p>Le paid media peut être structuré sur Google (capture de demande, requêtes, intention) et Meta (génération de demande, offres). À compléter avec vos données et la transparence des plateformes.</p>
+  </section>
+
+  <section class="card">
+    <h2>Formules et ordres de grandeur</h2>
+    <p>Pour les esprits mathématiques, voici les formules utilisées dans cette étude.</p>
+    <div class="formula-block">
+      <div class="label">Chiffre d’affaires mensuel (CA)</div>
+      <code>CA = Visites × CVR × AOV</code>
+    </div>
+    <div class="formula-block">
+      <div class="label">Perte de ventes (si perte de conversion p)</div>
+      <code>Orders = Visites × CVR  →  LostOrders = Orders × p  →  LostRevenue = LostOrders × AOV</code>
+    </div>
+    <p><strong>Exemple</strong> : 30 k visites, 1,5 % CVR, panier moyen 1 200 €, perte estimée 18 % : LostRevenue ≈ ~28 k€/mois.</p>
+    <p class="muted">Ordre de grandeur. Recalibrer avec vos données (trafic, CVR, panier).</p>
+  </section>
+
+  <section class="card">
+    <h2>Google vs Meta — rôles</h2>
+    <div class="flow-diagram">
+      <span class="flow-node google">Google Ads<br><small style="font-weight:400;font-size:0.8rem">Capture de demande</small></span>
+      <span class="flow-arrow">↔</span>
+      <span class="flow-node meta">Meta (FB/IG)<br><small style="font-weight:400;font-size:0.8rem">Génération de demande</small></span>
+    </div>
+    <p class="muted">Google : requêtes, intention, mots-clés. Meta : offres, créas, test & learn.</p>
+  </section>
+
+  <section class="card">
+    <h2>À compléter</h2>
+    <p>Google Ads : annonceur, thèmes, impressions (centre de transparence Google).</p>
+    <p>Meta : ciblage, répartition âge, créas (Meta Ad Library).</p>
+  </section>
+
+  <section class="card">
+    <p class="muted">Sources : <a href="https://adstransparency.google.com" target="_blank" rel="noopener">Google Ads Transparency</a>, Meta Ad Library (recherche « Infopro Digital » ou sites du groupe). Étude interne, données publiques.</p>
+  </section>
+  </div>
+  </div>
+</body>
+</html>
